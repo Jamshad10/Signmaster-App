@@ -6,6 +6,10 @@
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": "./src",
+    "paths": {
+      "@material-tailwind/react": ["../node_modules/@material-tailwind/react"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

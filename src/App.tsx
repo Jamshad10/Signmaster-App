@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FC } from 'react';
 import './App.css';
+import Header from './component/Header';
+import Home from 'pages/Home';
+import Form from 'pages/AddForm';
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify';
+import { Provider } from 'react-redux';
+import Store from 'Redux/Store';
+import { Routes, Route } from 'react-router-dom'
+import UserList from 'pages/UserView';
+import UpdateUser from 'pages/UpdateUser';
 
-function App() {
+const App: FC = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={Store}>
+      <div className="App">
+        <Header/>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/user/add' element={<Form/>} />
+          <Route path='/user/edit/:code' element={<UpdateUser/>} />
+          <Route path='/user/:code' element={<UserList/>} />
+        </Routes>
+        <ToastContainer className='toast-position'
+        position='bottom-right'></ToastContainer>
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;
