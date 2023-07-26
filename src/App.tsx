@@ -15,7 +15,7 @@ import axios from 'axios';
 const App: FC = () => {
 
   const fetchData = async () => {
-    const results = await axios.get('http://localhost:8000/user');
+    const results = await axios.get('/db.json');
     console.log(results);
     
   };
