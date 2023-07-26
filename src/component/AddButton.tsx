@@ -6,7 +6,7 @@ const AddButton = () => {
         <div>
             <Link to={'/user/add'} className="flex items-center justify-end">
                 <button
-                    className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 mr-28  rounded focus:outline-none focus:shadow-outline"
+                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 mr-28  rounded focus:outline-none focus:shadow-outline"
                     type="submit"
                 >
                     Add +
